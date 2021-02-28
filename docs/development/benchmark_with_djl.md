@@ -31,13 +31,13 @@ the 4-step instructions for your own model.
 Benchmark on a Tensorflow model from http url with all-ones NDArray input for 10 times:
 
 ```
-./gradlew benchmark -Dai.djl.default_engine=TensorFlow -Dai.djl.repository.zoo.location=https://storage.googleapis.com/tfhub-modules/tensorflow/resnet_50/classification/1.tar.gz?artifact_id=tf_resnet --args='-n tf_resnet -c 10 -s 1,224,224,3'
+./gradlew benchmark -Dai.djl.default_engine=TensorFlow -Dai.djl.repository.zoo.location="https://storage.googleapis.com/tfhub-modules/tensorflow/resnet_50/classification/1.tar.gz?artifact_id=tf_resnet" --args='-n tf_resnet -c 10 -s 1,224,224,3'
 ```
 
 Similarly, this is for PyTorch
 
 ```
-./gradlew benchmark -Dai.djl.default_engine=PyTorch -Dai.djl.repository.zoo.location=https://alpha-djl-demos.s3.amazonaws.com/model/djl-blockrunner/pytorch_resnet18.zip?model_name=traced_resnet18 --args='-c 10 -s 1,3,224,224'
+./gradlew benchmark -Dai.djl.default_engine=PyTorch -Dai.djl.repository.zoo.location="https://alpha-djl-demos.s3.amazonaws.com/model/djl-blockrunner/pytorch_resnet18.zip?model_name=traced_resnet18" --args='-c 10 -s 1,3,224,224'
 ```
 
 ### Benchmark from ModelZoo
@@ -207,7 +207,7 @@ For different purposes, we designed different mode you can play with. Such as th
 -d 1440
 ```
 
-This will ask the benchmark script repeatly running the designed task for 1440 minutes (24 hour).
+This will ask the benchmark script repeatedly running the designed task for 1440 minutes (24 hour).
 If you would like to make sure DJL is stable in the long run, you can do that.
 
 You can also keep monitoring the DJL memory usages by enable the following flag:
